@@ -7,11 +7,10 @@ import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
-import com.itextpdf.kernel.colors.ColorConstants;
 
 import java.io.IOException;
 
-public class AynaPdf {
+public class AynaAccessCardPdf {
 
     private static PdfCanvas canvas;
     private static final float CHAR_LENGTH = 3.7f;
@@ -26,7 +25,6 @@ public class AynaPdf {
         PageSize pageSize = PageSize.A5; //A5 size in pixels at 72 DPI: 420 x 595 pixels.
         PdfPage page = pdfDocument.addNewPage(pageSize);
 
-        // Add the dot to the page
         canvas = new PdfCanvas(page);
         String fontPath = "fonts/roboto-regular.ttf";
         PdfFont font = PdfFontFactory.createFont(fontPath, PdfEncodings.IDENTITY_H);
@@ -35,9 +33,10 @@ public class AynaPdf {
 
         /**************************************************************************************************************/
 
+
         //№
-        String strNo = "qwertyuiop";
-        setText(strNo, 190f, 238.11f, 358.33f);
+        String no = "qwertyuiop";
+        setText(no, 190f, 238.11f, 358.33f);
 
 
         /**************************************************************************************************************/
@@ -47,9 +46,10 @@ public class AynaPdf {
          **                               Buraxılış vəsiqəsi / Access card
          **/
 
+
         //Seriyası və nömrəsi üst
-        String strSeriyaUst = "seriya üst";
-        setText(strSeriyaUst, 87.87f, 226.77f, 305.30f);
+        String seriyaUst = "seriya üst";
+        setText(seriyaUst, 87.87f, 226.77f, 305.30f);
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -64,24 +64,24 @@ public class AynaPdf {
 
 
         //Qüvvədə olma müddəti - FROM GÜN
-        String ddFrom = "dd";
-        setText(ddFrom, 90.71f, 107.71f, 255.28f);
+        String ddFromUst = "dd";
+        setText(ddFromUst, 90.71f, 107.71f, 255.28f);
 
 
         //////////////////////////////////////////////////////////////////////////
 
 
         //Qüvvədə olma müddəti - FROM AY
-        String mmFrom = "mm";
-        setText(mmFrom, 110.55f, 133.22f, 255.28f);
+        String mmFromUst = "mm";
+        setText(mmFromUst, 110.55f, 133.22f, 255.28f);
 
 
         //////////////////////////////////////////////////////////////////////////
 
 
         //Qüvvədə olma müddəti - FROM IL
-        String yyFrom = "yy";
-        setText(yyFrom, 147.40f, 161.57f, 255.28f);
+        String yyFromUst = "yy";
+        setText(yyFromUst, 147.40f, 161.57f, 255.28f);
 
 
         //////////////////////////////////////////////////////////////////////////
