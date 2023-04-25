@@ -173,7 +173,7 @@ public class AynaAccessCertificatePdf {
     }
 
     private void setText(String text, float x_axis_start, float x_axis_end, float y_axis) {
-        center = ((x_axis_end - x_axis_start) / 2) + x_axis_start;
+        center = (x_axis_end + x_axis_start) / 2;
         centerilizedStartPoint = calculateStatPoint(center, text.length());
         canvas.beginText().setTextMatrix(centerilizedStartPoint, y_axis).showText(text).endText();
     }
