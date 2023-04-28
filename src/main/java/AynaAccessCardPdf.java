@@ -30,7 +30,7 @@ public class AynaAccessCardPdf {
 
         PageSize pageSize = PageSize.A5; //A5 size in pixels at 72 DPI: 420 x 595 pixels.
         PdfPage page = pdfDocument.addNewPage(pageSize);
-//        page.setRotation(180);
+        //page.setRotation(180);
 
         canvas = new PdfCanvas(page);
         String fontPath = "fonts/roboto-regular.ttf";
