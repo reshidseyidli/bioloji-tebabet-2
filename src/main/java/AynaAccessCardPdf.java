@@ -1,9 +1,11 @@
 import com.itextpdf.io.font.PdfEncodings;
+import com.itextpdf.io.font.otf.GlyphLine;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
+import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
@@ -12,18 +14,23 @@ import java.io.IOException;
 
 public class AynaAccessCardPdf {
 
+    public static void main(String[] args) throws IOException {
+        createPdf();
+    }
+
     private static PdfCanvas canvas;
     private static final float CHAR_LENGTH = 3.7f;
     private static float center;
     private static float centerilizedStartPoint;
 
-    public void createPdf(Entity entity) throws IOException {
-        String pdfPath = "ayna.pdf";
+    private static void createPdf() throws IOException {
+        String pdfPath = "ayna-access-card.pdf";
         PdfWriter pdfWriter = new PdfWriter(pdfPath);
         PdfDocument pdfDocument = new PdfDocument(pdfWriter);
 
         PageSize pageSize = PageSize.A5; //A5 size in pixels at 72 DPI: 420 x 595 pixels.
         PdfPage page = pdfDocument.addNewPage(pageSize);
+//        page.setRotation(180);
 
         canvas = new PdfCanvas(page);
         String fontPath = "fonts/roboto-regular.ttf";
@@ -36,7 +43,7 @@ public class AynaAccessCardPdf {
 
         //№
         String no = "qwertyuiop";
-        setText(no, 190f, 238.11f, 358.33f);
+        setText(no, 190f, 238.11f, 357.16f); //x = mm,  y = 125mm +1
 
 
         /**************************************************************************************************************/
@@ -48,8 +55,8 @@ public class AynaAccessCardPdf {
 
 
         //Seriyası və nömrəsi üst
-        String seriyaUst = "seriya üst";
-        setText(seriyaUst, 87.87f, 226.77f, 305.30f);
+        String seriyaUst = "seriya ust";
+        setText(seriyaUst, 87.87f, 226.77f, 303.30f); //x = mm,  y = 106mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -57,7 +64,7 @@ public class AynaAccessCardPdf {
 
         //Seriyası və nömrəsi alt
         String seriyaAlt = "seriya alt";
-        setText(seriyaAlt, 87.87f, 226.77f, 285.46f);
+        setText(seriyaAlt, 87.87f, 226.77f, 283.46f);  //x = mm,  y = 99mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -65,7 +72,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - FROM GÜN
         String ddFromUst = "dd";
-        setText(ddFromUst, 90.71f, 107.71f, 255.28f);
+        setText(ddFromUst, 90.71f, 107.71f, 252.28f); //x = mm,  y = 88mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -73,7 +80,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - FROM AY
         String mmFromUst = "mm";
-        setText(mmFromUst, 110.55f, 133.22f, 255.28f);
+        setText(mmFromUst, 110.55f, 133.22f, 252.28f); //x = mm,  y = 88mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -81,7 +88,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - FROM IL
         String yyFromUst = "yy";
-        setText(yyFromUst, 147.40f, 161.57f, 255.28f);
+        setText(yyFromUst, 147.40f, 161.57f, 252.28f); //x = mm,  y = 88mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -89,7 +96,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - TO GUN
         String ddTo = "dd";
-        setText(ddTo, 90.71f, 107.71f, 235.44f);
+        setText(ddTo, 90.71f, 107.71f, 232.44f); //x = mm,  y = 81mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -97,7 +104,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - TO AY
         String mmTo = "mm";
-        setText(mmTo, 110.55f, 133.22f, 235.44f);
+        setText(mmTo, 110.55f, 133.22f, 232.44f); //x = mm,  y = 81mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -105,15 +112,15 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - TO IL
         String yyTo = "yy";
-        setText(yyTo, 147.40f, 161.57f, 235.44f);
+        setText(yyTo, 147.40f, 161.57f, 232.44f); //x = mm,  y = 81mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
 
 
         //Operator üst
-        String operatorUst = "operator üst";
-        setText(operatorUst, 87.87f, 226.77f, 204.26f);
+        String operatorUst = "operator ust";
+        setText(operatorUst, 87.87f, 226.77f, 201.25f); //x = mm,  y = 70+mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -121,7 +128,7 @@ public class AynaAccessCardPdf {
 
         //Operator alt
         String operatorAlt = "operator alt";
-        setText(operatorAlt, 87.87f, 226.77f, 184.42f);
+        setText(operatorAlt, 87.87f, 226.77f, 184.25f); //x = mm,  y = 64mm +1
 
 
         /**************************************************************************************************************/
@@ -134,7 +141,7 @@ public class AynaAccessCardPdf {
 
         //Markası
         String marka = "markasi";
-        setText(marka, 274.96f, 382.68f, 306f);
+        setText(marka, 274.96f, 382.68f, 303.30f); //x = mm,  y = 106mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -142,7 +149,7 @@ public class AynaAccessCardPdf {
 
         //Növü
         String novu = "novu";
-        setText(novu, 260.79f, 382.68f, 276.12f);
+        setText(novu, 260.79f, 382.68f, 272.12f); //x = mm,  y = 95+mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -150,15 +157,15 @@ public class AynaAccessCardPdf {
 
         //DQN - dövlət qeydiyyat nişanı
         String dqn = "DQN";
-        setText(dqn, 331.65f, 382.67f, 244.11f);
+        setText(dqn, 331.65f, 382.67f, 240.94f); //x = mm,  y = 84+mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
 
 
         //Daşımanın növü
-        String dasinmaNovu = "daşımanın növü";
-        setText(dasinmaNovu, 235.28f, 382.67f, 184.42f);
+        String dasinmaNovu = "dasimanin novu";
+        setText(dasinmaNovu, 235.28f, 382.67f, 181.41f); //x = mm,  y = 63+mm +1
 
 
         /**************************************************************************************************************/
@@ -174,7 +181,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - FROM GÜN
         String ddFromAlt = "dd";
-        setText(ddFromAlt, 90.71f, 107.71f, 103.21f);
+        setText(ddFromAlt, 90.71f, 107.71f, 102.04f); //x = mm,  y = 35+mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -182,7 +189,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - FROM AY
         String mmFromAlt = "mm";
-        setText(mmFromAlt, 110.55f, 133.22f, 103.21f);
+        setText(mmFromAlt, 110.55f, 133.22f, 102.04f); //x = mm,  y = 35+mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -190,7 +197,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - FROM IL
         String yyFromAlt = "yy";
-        setText(yyFromAlt, 147.40f, 161.57f, 103.21f);
+        setText(yyFromAlt, 147.40f, 161.57f, 102.04f); //x = mm,  y = 35+mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -198,7 +205,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - TO GUN
         String ddToAlt = "dd";
-        setText(ddToAlt, 90.71f, 107.71f, 83.37f);
+        setText(ddToAlt, 90.71f, 107.71f, 82.20f); //x = mm,  y = 28mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -206,7 +213,7 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - TO AY
         String mmToAlt = "mm";
-        setText(mmToAlt, 110.55f, 133.22f, 83.37f);
+        setText(mmToAlt, 110.55f, 133.22f, 82.20f); //x = mm,  y = 28mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -214,23 +221,23 @@ public class AynaAccessCardPdf {
 
         //Qüvvədə olma müddəti - TO IL
         String yyToAlt = "yy";
-        setText(yyToAlt, 147.40f, 161.57f, 83.37f);
+        setText(yyToAlt, 147.40f, 161.57f, 82.20f); //x = mm,  y = 28mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
 
 
         //Bu sənəd gücləndirilmiş elektron imza ilə... ust
-        String buSenedUst = "bu sənəd üst";
-        setText(buSenedUst, 235.28f, 382.67f, 90.04f);
+        String buSenedUst = "bu sened ust";
+        setText(buSenedUst, 235.28f, 382.67f, 87.87f); //x = mm,  y = 30mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
 
 
         //Bu sənəd gücləndirilmiş elektron imza ilə... - alt
-        String buSenedAlt = "bu sənəd alt";
-        setText(buSenedAlt, 235.28f, 382.67f, 73.03f);
+        String buSenedAlt = "bu sened alt";
+        setText(buSenedAlt, 235.28f, 382.67f, 76.53f); //x = mm,  y = 26+mm +1
 
 
         /**************************************************************************************************************/
@@ -244,15 +251,15 @@ public class AynaAccessCardPdf {
         System.out.println("PDF created");
     }
 
-    private void setText(String text, float x_axis_start, float x_axis_end, float y_axis) {
+    private static void setText(String text, float x_axis_start, float x_axis_end, float y_axis) {
         center = ((x_axis_end - x_axis_start) / 2) + x_axis_start;
-        centerilizedStartPoint = calculateStatPoint(center, text.length());
+        centerilizedStartPoint = calculateStartPoint(center, text.length());
         canvas.beginText().setTextMatrix(centerilizedStartPoint, y_axis).showText(text).endText();
     }
 
     // for CENTERing contetn
-    private float calculateStatPoint(float x_center_point, int length) {
-        return x_center_point - ((float) length / 2 * CHAR_LENGTH);
+    private static float calculateStartPoint(float x_center_point, int textLength) {
+        return x_center_point - ((float) textLength / 2 * CHAR_LENGTH);
     }
 
 }
