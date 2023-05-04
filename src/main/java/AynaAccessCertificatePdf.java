@@ -12,12 +12,16 @@ import java.io.IOException;
 
 public class AynaAccessCertificatePdf {
 
+    public static void main(String[] args) throws IOException {
+        createPdf();
+    }
+
     private static PdfCanvas canvas;
     private static final float CHAR_LENGTH = 3.7f;
     private static float center;
     private static float centerilizedStartPoint;
 
-    public void createPdf(Entity entity) throws IOException {
+    private static void createPdf() throws IOException {
         String pdfPath = "ayna-cert.pdf";
         PdfWriter pdfWriter = new PdfWriter(pdfPath);
         PdfDocument pdfDocument = new PdfDocument(pdfWriter);
