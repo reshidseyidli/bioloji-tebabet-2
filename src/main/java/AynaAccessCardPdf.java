@@ -24,13 +24,12 @@ public class AynaAccessCardPdf {
     private static float centerilizedStartPoint;
 
     private static void createPdf() throws IOException {
-        String pdfPath = "ayna-access-card.pdf";
+        String pdfPath = "ayna-card.pdf";
         PdfWriter pdfWriter = new PdfWriter(pdfPath);
         PdfDocument pdfDocument = new PdfDocument(pdfWriter);
 
         PageSize pageSize = PageSize.A5; //A5 size in pixels at 72 DPI: 420 x 595 pixels.
         PdfPage page = pdfDocument.addNewPage(pageSize);
-        //page.setRotation(180);
 
         canvas = new PdfCanvas(page);
         String fontPath = "fonts/roboto-regular.ttf";
@@ -42,7 +41,7 @@ public class AynaAccessCardPdf {
 
 
         //№
-        String no = "qwertyuiop";
+        String no = "Əə İi Iı Şş Çç Öö Ğğ Üü";
         setText(no, 190f, 238.11f, 357.16f); //x = mm,  y = 125mm +1
 
 
@@ -55,7 +54,7 @@ public class AynaAccessCardPdf {
 
 
         //Seriyası və nömrəsi üst
-        String seriyaUst = "seriya ust";
+        String seriyaUst = "seriya üst";
         setText(seriyaUst, 87.87f, 226.77f, 303.30f); //x = mm,  y = 106mm +1
 
 
@@ -119,7 +118,7 @@ public class AynaAccessCardPdf {
 
 
         //Operator üst
-        String operatorUst = "operator ust";
+        String operatorUst = "operator üst";
         setText(operatorUst, 87.87f, 226.77f, 201.25f); //x = mm,  y = 70+mm +1
 
 
@@ -140,7 +139,7 @@ public class AynaAccessCardPdf {
 
 
         //Markası
-        String marka = "markasi";
+        String marka = "markası";
         setText(marka, 274.96f, 382.68f, 303.30f); //x = mm,  y = 106mm +1
 
 
@@ -148,7 +147,7 @@ public class AynaAccessCardPdf {
 
 
         //Növü
-        String novu = "novu";
+        String novu = "növü";
         setText(novu, 260.79f, 382.68f, 272.12f); //x = mm,  y = 95+mm +1
 
 
@@ -164,7 +163,7 @@ public class AynaAccessCardPdf {
 
 
         //Daşımanın növü
-        String dasinmaNovu = "dasimanin novu";
+        String dasinmaNovu = "daşımanın növü";
         setText(dasinmaNovu, 235.28f, 382.67f, 181.41f); //x = mm,  y = 63+mm +1
 
 
@@ -228,7 +227,7 @@ public class AynaAccessCardPdf {
 
 
         //Bu sənəd gücləndirilmiş elektron imza ilə... ust
-        String buSenedUst = "bu sened ust";
+        String buSenedUst = "bu sənəd üst";
         setText(buSenedUst, 235.28f, 382.67f, 87.87f); //x = mm,  y = 30mm +1
 
 
@@ -236,7 +235,7 @@ public class AynaAccessCardPdf {
 
 
         //Bu sənəd gücləndirilmiş elektron imza ilə... - alt
-        String buSenedAlt = "bu sened alt";
+        String buSenedAlt = "bu sənəd alt";
         setText(buSenedAlt, 235.28f, 382.67f, 76.53f); //x = mm,  y = 26+mm +1
 
 
@@ -257,7 +256,7 @@ public class AynaAccessCardPdf {
         canvas.beginText().setTextMatrix(centerilizedStartPoint, y_axis).showText(text).endText();
     }
 
-    // for CENTERing contetn
+    // for CENTERing content
     private static float calculateStartPoint(float x_center_point, int textLength) {
         return x_center_point - ((float) textLength / 2 * CHAR_LENGTH);
     }

@@ -18,7 +18,7 @@ public class AynaAccessCertificatePdf {
     private static float centerilizedStartPoint;
 
     public void createPdf(Entity entity) throws IOException {
-        String pdfPath = "ayna.pdf";
+        String pdfPath = "ayna-cert.pdf";
         PdfWriter pdfWriter = new PdfWriter(pdfPath);
         PdfDocument pdfDocument = new PdfDocument(pdfWriter);
 
@@ -31,19 +31,19 @@ public class AynaAccessCertificatePdf {
         canvas.setFontAndSize(font, 8);
 
 
-        //////////////////////////////////////////////////////////////////////////
+        /**************************************************************************************************************/
 
 
         //Seriya
         String seriya = "seriya";
-        setText(seriya, 85.04f, 130.39f, 362.83f);
+        setText(seriya, 85.04f, 130.39f, 360); //x = mm,  y = 126mm +1
 
         //////////////////////////////////////////////////////////////////////////
 
 
         //№
         String no = "nooooooooooo";
-        setText(no, 141.73f, 188f, 362.83f);
+        setText(no, 141.73f, 188f, 362.83f); //x = mm,  y = 126mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -51,7 +51,7 @@ public class AynaAccessCertificatePdf {
 
         //Verildiyi tarix GÜN
         String gun = "dd";
-        setText(gun, 255.19f, 274.96f, 362.83f);
+        setText(gun, 255.19f, 274.96f, 362.83f); //x = mm,  y = 126mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -59,7 +59,7 @@ public class AynaAccessCertificatePdf {
 
         //Verildiyi tarix AY
         String ay = "dekabr";
-        setText(ay, 283.46f, 340.16f, 362.83f);
+        setText(ay, 283.46f, 340.16f, 362.83f); //x = mm,  y = 126mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -67,15 +67,15 @@ public class AynaAccessCertificatePdf {
 
         //Verildiyi tarix IL
         String il = "22";
-        setText(il, 354.33f, 379.84f, 362.83f);
+        setText(il, 354.33f, 379.84f, 362.83f); //x = mm,  y = 126mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
 
 
-        //Operator
+        //Verilir avtomobil ... Operator
         String operator = "operator";
-        setText(operator, 223.94f, 379.84f, 317.48f);
+        setText(operator, 223.94f, 379.84f, 314.64f); //x = mm,  y = 110mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -83,7 +83,7 @@ public class AynaAccessCertificatePdf {
 
         // (sərnişin, yük, yaxud hər ikisi)
         String sernisin = "sərnişin, yük, yaxud hər ikisi";
-        setText(sernisin, 31.18f, 379.84f, 294.80f);
+        setText(sernisin, 31.18f, 379.84f, 291.96f); //x = mm,  y = 102mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -91,7 +91,7 @@ public class AynaAccessCertificatePdf {
 
         // (hüquqi şəxsin, xarici hüquqi şəxsin filialının, nümayəndəliyinin adı və hüquqi ünvanı fiziki şəxsin soyadı, adı,)
         String unvanAd = "hüquqi şəxsin, xarici hüquqi şəxsin filialının, nümayəndəliyinin";
-        setText(unvanAd, 31.18f, 379.84f, 272.12f);
+        setText(unvanAd, 31.18f, 379.84f, 274.96f); //x = mm,  y = 96mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -99,7 +99,7 @@ public class AynaAccessCertificatePdf {
 
         // (atasının adı vəfəaliyyət ünvanı, VÖEN)
         String voen = "atasının adı vəfəaliyyət ünvanı, VÖEN";
-        setText(voen, 31.18f, 379.84f, 249.44f);
+        setText(voen, 31.18f, 379.84f, 246.61f); //x = mm,  y = 86mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -107,7 +107,7 @@ public class AynaAccessCertificatePdf {
 
         // (of foreign legal entity, surname, name ... )
         String tin = "of foreign legal entity, surname, name ... ";
-        setText(tin, 31.18f, 379.84f, 226.77f);
+        setText(tin, 31.18f, 379.84f, 223.93f); //x = mm,  y = 78mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -115,7 +115,7 @@ public class AynaAccessCertificatePdf {
 
         // Qüvvədədir / Valid
         String quvvededir = "50";
-        setText(quvvededir, 104.88f, 141.73f, 192.75f);
+        setText(quvvededir, 104.88f, 141.73f, 189.92f); //x = mm,  y = 66mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -123,7 +123,7 @@ public class AynaAccessCertificatePdf {
 
         //Qüvvədədir GÜN
         String quvveGun = "dd";
-        setText(gun, 76.53f, 96.37f, 175.74f);
+        setText(gun, 76.53f, 96.37f, 172.91f); //x = mm,  y = 60mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -131,7 +131,7 @@ public class AynaAccessCertificatePdf {
 
         //Qüvvədədir AY
         String quvveAy = "yanvar";
-        setText(quvveAy, 102.04f, 187.08f, 175.74f);
+        setText(quvveAy, 102.04f, 187.08f, 175.74f); //x = mm,  y = 60mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -139,7 +139,7 @@ public class AynaAccessCertificatePdf {
 
         //Qüvvədədir IL
         String quvveIl = "22";
-        setText(quvveIl, 198.42f, 221.10f, 175.74f);
+        setText(quvveIl, 198.42f, 221.10f, 175.74f); //x = mm,  y = 60mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -147,7 +147,7 @@ public class AynaAccessCertificatePdf {
 
         //İmzalayan vəzifəli şəxs (adı, soyadı və atasının adı)
         String imzalayan = "Resid Seyidli";
-        setText(imzalayan, 155.9055f, 379.84f, 113.38f);
+        setText(imzalayan, 155.9055f, 379.84f, 113.38f); //x = mm,  y = 38mm +1
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -155,13 +155,10 @@ public class AynaAccessCertificatePdf {
 
         //Vəzifə
         String vezife = "proqram teminati";
-        setText(vezife, 96.37f, 379.84f, 65.19f);
+        setText(vezife, 96.37f, 379.84f, 59.52f); //x = mm,  y = 20mm +1
 
 
-        //////////////////////////////////////////////////////////////////////////
-
-
-
+        /**************************************************************************************************************/
 
 
         Document document = new Document(pdfDocument);
@@ -172,15 +169,15 @@ public class AynaAccessCertificatePdf {
         System.out.println("PDF created");
     }
 
-    private void setText(String text, float x_axis_start, float x_axis_end, float y_axis) {
-        center = (x_axis_end + x_axis_start) / 2;
-        centerilizedStartPoint = calculateStatPoint(center, text.length());
+    private static void setText(String text, float x_axis_start, float x_axis_end, float y_axis) {
+        center = ((x_axis_end - x_axis_start) / 2) + x_axis_start;
+        centerilizedStartPoint = calculateStartPoint(center, text.length());
         canvas.beginText().setTextMatrix(centerilizedStartPoint, y_axis).showText(text).endText();
     }
 
-    // for CENTERing contetn
-    private float calculateStatPoint(float x_center_point, int length) {
-        return x_center_point - ((float) length / 2 * CHAR_LENGTH);
+    // for CENTERing content
+    private static float calculateStartPoint(float x_center_point, int textLength) {
+        return x_center_point - ((float) textLength / 2 * CHAR_LENGTH);
     }
 
 }
